@@ -20,7 +20,7 @@
 </p>
 
 ---
-## 🎥 Watch the demo here  
+## 🎥 Watch the demo video here  
 <p align="center">
   <a href="YOUR_VIDEO_LINK_HERE">
     <img src="assets/demo vid of wearOs app.png" alt="Watch Demo Video" width="400" />
