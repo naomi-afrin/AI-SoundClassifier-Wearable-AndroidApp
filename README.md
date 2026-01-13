@@ -1,4 +1,4 @@
-# 📌 AI SoundLocator - Wearable Android App  
+# 📌 AI-Based-Edge-IoT-Sound-Detection-System 
 **A wearable Android app that uses AI and edge computing to classify and localize sounds in real-time, with vibration feedback and IoT networking via ESP32.**  
 
 ---
