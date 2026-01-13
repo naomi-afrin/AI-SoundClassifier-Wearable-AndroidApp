@@ -1,0 +1,73 @@
+plugins {
+    alias(libs.plugins.android.application)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.compose)
+}
+
+android {
+    namespace 'com.example.wear_os_sound_detection'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.example.wear_os_sound_detection"
+        minSdk 31
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+    kotlinOptions {
+        jvmTarget = '11'
+    }
+    buildFeatures {
+        compose true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.1" // match your Compose version
+    }
+
+    packagingOptions {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
+    }
+}
+
+dependencies {
+    implementation libs.play.services.wearable
+    implementation platform(libs.compose.bom)
+    implementation libs.ui
+    implementation libs.ui.graphics
+    implementation libs.ui.tooling.preview
+    implementation libs.compose.material
+    implementation libs.compose.foundation
+    implementation libs.wear.tooling.preview
+    implementation libs.activity.compose
+    implementation libs.core.splashscreen
+    androidTestImplementation platform(libs.compose.bom)
+    androidTestImplementation libs.ui.test.junit4
+    debugImplementation libs.ui.tooling
+    debugImplementation libs.ui.test.manifest
+    // TensorFlow Lite runtime
+    implementation(libs.tensorflow.lite)             // maps to 2.17.0
+//    implementation(libs.tensorflow.lite.support)     // maps to 0.4.4 // not needed for code and also causes duplicate class error
+//    implementation(libs.tensorflow.lite.task.audio) // maps to 0.4.4
+    implementation(libs.coroutines.android)  // maps to kotlinx-coroutines-android:1.7.3
+    implementation(libs.wear)                // maps to androidx.wear:wear:1.2.0
+    implementation(libs.compose.material3)
+    // WebSocket client for ESP32 streaming
+    implementation("org.java-websocket:Java-WebSocket:1.5.4")
+
+}
